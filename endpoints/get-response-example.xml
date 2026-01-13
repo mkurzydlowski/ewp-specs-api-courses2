@@ -1,0 +1,26 @@
+<courses-response
+    xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/stable-v1"
+    xmlns:trm="https://github.com/erasmus-without-paper/ewp-specs-types-academic-term/tree/stable-v2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/stable-v1
+        get-response.xsd
+    "
+>
+    <course>
+        <id>f6d14b1f-f330-4956-8819-e24feb12d519</id>
+        <code>COUR01</code>
+        <title xml:lang="no">Grunnkurs i matematikk</title>
+        <title xml:lang="en">Introductory calculus</title>
+        <subjectArea>12345</subjectArea>
+        <iscedCode>0541</iscedCode>
+        <description xml:lang="no">En eller annen beskrivelse</description>
+        <description xml:lang="en">Some description</description>
+        <academic-term-id>
+            <trm:term-number>1</trm:term-number>
+            <trm:total-terms>2</trm:total-terms>
+        </academic-term-id>
+        <ects>15</ects>
+        <languageOfInstruction>en</languageOfInstruction>
+    </course>
+</courses-response>
