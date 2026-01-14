@@ -55,20 +55,6 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="code" minOccurs="0" type="xs:string">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        Since course IDs should be surrogate identifiers (and, as such, should not be
-                                        displayed to the user), we allow additional "human-readable" unique codes (aka
-                                        "natural identifiers") to be provided here. These codes MAY be displayed to the
-                                        user along the course title, but they are *not used* to identify entities in EWP
-                                        network.
-
-                                        Related links:
-                                        https://github.com/erasmus-without-paper/ewp-specs-architecture#ids
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
                             <xs:element name="title" type="ewp:StringWithOptionalLang" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
@@ -83,36 +69,38 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="subjectArea" type="xs:string" minOccurs="0">
+                            <xs:element name="code" type="xs:string">
                                 <xs:annotation>
                                     <xs:documentation>
-                                        The Erasmus subject area code of the course.
+                                        Since course IDs should be surrogate identifiers (and, as such, should not be
+                                        displayed to the user), we allow additional "human-readable" unique codes (aka
+                                        "natural identifiers") to be provided here. These codes MAY be displayed to the
+                                        user along the course title, but they are *not used* to identify entities in EWP
+                                        network.
 
-                                        It is named "subjectArea" for consistency with older ELMO-based formats.
-                                        https://github.com/erasmus-without-paper/ewp-specs-api-courses/issues/6
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:element name="iscedCode" type="xs:string">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        The ISCED-F code of the course.
-
-                                        ISCED-F codes define fields of education and training at the secondary,
-                                        post-secondary and tertiary levels of education. Details:
-                                        https://www.uis.unesco.org/Education/Documents/isced-fields-of-education-training-2013.pdf
+                                        Related links:
+                                        https://github.com/erasmus-without-paper/ewp-specs-architecture#ids
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
                             <xs:element name="description" type="ewp:MultilineStringWithOptionalLang" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
-                                        An optional description of the course.
+                                        Description of the course with optional language code.
 
-                                        The primary purpose of the description field is to provide
+                                        This field MAY be displayed to the user, but it might be better to refer the
+                                        user to a more "user-friendly" web page instead (the one given in the `url`
+                                        element above). The primary purpose of the description field is to provide
                                         keywords for full-text searching. Server implementers are encouraged to provide
                                         as many types of information as they like here, but this information should
                                         still be divided in meaningful paragraphs and be human-readable.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="learningOutcomes" type="ewp:MultilineStringWithOptionalLang" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Learning outcomes with optional language code.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
@@ -140,6 +128,55 @@
 
                                         A note for server implementers: This MUST be a single language. If multiple
                                         languages were used, attempt to select the primary one.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="iscedCode" type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        The ISCED-F code of the course.
+
+                                        ISCED-F codes define fields of education and training at the secondary,
+                                        post-secondary and tertiary levels of education. Details:
+                                        https://www.uis.unesco.org/Education/Documents/isced-fields-of-education-training-2013.pdf
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="subjectArea" type="xs:string" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        The Erasmus subject area code of the course.
+
+                                        It is named "subjectArea" for consistency with older ELMO-based formats.
+                                        https://github.com/erasmus-without-paper/ewp-specs-api-courses/issues/6
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="otherCategorization" type="xs:string" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Any other term used internally to describe the field of education of the course.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="unavailableForIncomingMobility" type="xs:boolean" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Return true when the course is not available for incoming exchange students to enroll.
+
+                                        Unless explicitly stated, client implementations should assume this as false.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="url" type="ewp:HTTPWithOptionalLang" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        The URL of the web page with the description of the course.
+
+                                        The xml:lang attribute, if given, SHOULD represent the language of this page.
+                                        Multiple URLs can be provided (with different xml:lang values). It is also
+                                        perfectly okay to provide a single URL which dynamically detects the viewer's
+                                        language preferences (in this case, no xml:lang attribute should be given).
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
