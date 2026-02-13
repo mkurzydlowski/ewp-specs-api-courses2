@@ -83,7 +83,43 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="description" type="ewp:MultilineStringWithOptionalLang" maxOccurs="unbounded">
+                            <xs:element name="ects" type="xs:decimal">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Number of ECTS credits which the student should achieve by completing
+                                        this course.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="languageOfInstruction" type="xs:language" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        An BCP 47 code of the language which has been used
+                                        as the primary language of teaching during the classes.
+                                        E.g. "pl" if the course is instructed/conducted in Polish.
+
+                                        Language tags allow specifying languages and their variations.
+
+                                        Examples:
+                                        — `el` for Greek;
+                                        — `el-Latn` for Greek in the Latin script;
+                                        — `el-CY` for Cypriot Greek;
+                                        — `el-Latn-CY` for Cypriot Greek in the Latin script.
+
+                                        References:
+                                        — Current specification – https://www.rfc-editor.org/info/bcp47
+                                        — Language subtag registry – https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="lastModified" type="xs:dateTime">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Time of the last change to this course.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="description" type="ewp:MultilineStringWithOptionalLang" minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
                                         Description of the course with optional language code.
@@ -97,44 +133,67 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="learningOutcomes" type="ewp:MultilineStringWithOptionalLang" maxOccurs="unbounded">
+                            <xs:element name="learningOutcomes" type="ewp:MultilineStringWithOptionalLang" minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
                                         Learning outcomes with optional language code.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="academic-term-id" type="trm:TermId">
+                            <xs:element name="academic-term-id" type="trm:TermId" minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
-                                        Describes the academic term in which the course takes place.
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:element name="ects" type="xs:decimal">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        This number of ECTS credits which the student should achieve by completing
-                                        this course.
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:element name="languageOfInstruction" type="xs:language">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        An BCP 47 code of the
-                                        language which has been used as the primary language of teaching during the
-                                        classes. E.g. "pl" if the course is instructed/conducted in Polish.
+                                        Describes the academic term id in which the course takes place.
 
-                                        A note for server implementers: This MUST be a single language. If multiple
-                                        languages were used, attempt to select the primary one.
+                                        Multiple values are allowed to support courses delivered
+                                        in more than one academic term throughout an academic year.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="iscedCode" type="xs:string">
+                            <xs:element name="elmAssessmentType" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Assessment type as defined in the European Learning Model (ELM).
+
+                                        https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/assessment/25831c2
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="elmLearningActivityType" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Learning activity type as defined in the European Learning Model (ELM).
+
+                                        https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/learning-activity/25831c2
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="elmLearningOpportunityType" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Learning opportunity type as defined in the European Learning Model (ELM).
+
+                                        Note: limited to the items in the controlled vocabulary that may apply to courses.
+
+                                        https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/learning-opportunity/25831c2
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="elmModeOfLearning" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Mode of learning and assessment as defined in the European Learning Model (ELM).
+
+                                        https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/learning-assessment/25831c2
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="iscedCode" type="xs:string" minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
                                         The ISCED-F code of the course.
+
+                                        Multiple values are allowed in order to support multidisciplinary courses.
 
                                         ISCED-F codes define fields of education and training at the secondary,
                                         post-secondary and tertiary levels of education. Details:
@@ -142,27 +201,36 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="subjectArea" type="xs:string" minOccurs="0">
+                            <xs:element name="localClassification" minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
-                                        The Erasmus subject area code of the course.
+                                        A local (national or other) classification system for fields of study,
+                                        followed by the applicable value (or code) in that system.
 
-                                        It is named "subjectArea" for consistency with older ELMO-based formats.
-                                        https://github.com/erasmus-without-paper/ewp-specs-api-courses/issues/6
+                                        Multiple values are allowed to support multidisplinary courses.
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="classificationSystem" type="xs:string"/>
+                                        <xs:element name="classificationValue" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="restrictedToLocalStudents" type="xs:boolean" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Return true when the course is restricted to students enrolled at this Institution.
+
+                                        Unless explicitly stated, client implementations should assume this as false.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="otherCategorization" type="xs:string" minOccurs="0">
+                            <xs:element name="restrictedToAllianceStudents" type="xs:boolean" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation>
-                                        Any other term used internally to describe the field of education of the course.
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:element name="unavailableForIncomingMobility" type="xs:boolean" minOccurs="0">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        Return true when the course is not available for incoming exchange students to enroll.
+                                        Return true when the course is restricted to students
+                                        enrolled at a partner Institution in the same University Alliance.
 
                                         Unless explicitly stated, client implementations should assume this as false.
                                     </xs:documentation>
@@ -173,10 +241,28 @@
                                     <xs:documentation>
                                         The URL of the web page with the description of the course.
 
-                                        The xml:lang attribute, if given, SHOULD represent the language of this page.
-                                        Multiple URLs can be provided (with different xml:lang values). It is also
-                                        perfectly okay to provide a single URL which dynamically detects the viewer's
-                                        language preferences (in this case, no xml:lang attribute should be given).
+                                        The `xml:lang` attribute, if given, SHOULD represent the language of this page.
+                                        Multiple URLs can be provided (with different `xml:lang` values). It is also
+                                        perfectly okay to provide a single URL that dynamically detects the viewer's
+                                        language preferences (in this case, no `xml:lang` attribute should be given).
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="deprecated" type="xs:boolean" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Return true when the course will no longer be delivered,
+                                        or there is no expectation that it will be delivered in the foreseeable future.
+
+                                        Unless explicitly stated, client implementations should assume this as false.
+
+                                        *Deprecate, do not delete!*
+
+                                        Institutions MUST keep a permanent record of all courses ever delivered
+                                        so that they may be referenced from course instances.
+
+                                        Servers MUST omit deprecated courses from the course index
+                                        (unless deprecated is used as a filter).
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>

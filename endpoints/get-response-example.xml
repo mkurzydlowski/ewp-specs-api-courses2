@@ -12,6 +12,9 @@
         <title xml:lang="no">Grunnkurs i matematikk</title>
         <title xml:lang="en">Introductory calculus</title>
         <code>COUR01</code>
+        <ects>15</ects>
+        <languageOfInstruction>en</languageOfInstruction>
+        <lastModified>2025-09-01T12:00:00Z</lastModified>
         <description xml:lang="no">En eller annen beskrivelse</description>
         <description xml:lang="en">Some description</description>
         <learningOutcomes xml:lang="en">These are the learning outcomes of the Course</learningOutcomes>
@@ -19,10 +22,18 @@
             <trm:term-number>1</trm:term-number>
             <trm:total-terms>2</trm:total-terms>
         </academic-term-id>
-        <ects>15</ects>
-        <languageOfInstruction>en</languageOfInstruction>
+        <elmAssessmentType>3484bd7e51</elmAssessmentType>
+        <elmAssessmentType>d30284d7df</elmAssessmentType>
+        <elmAssessmentType>6e6cb2cc78</elmAssessmentType>
+        <elmLearningActivityType>ff436ea7c9</elmLearningActivityType>
+        <elmLearningActivityType>3c8bd58d62</elmLearningActivityType>
+        <elmLearningOpportunityType>05053c1cbe</elmLearningOpportunityType>
+        <elmModeOfLearning>e92d221e4d</elmModeOfLearning>
         <iscedCode>0541</iscedCode>
-        <subjectArea>12345</subjectArea>
+        <localClassification>
+            <classificationSystem>erasmus</classificationSystem>
+            <classificationValue>00.0</classificationValue>
+        </localClassification>
         <url>https://example.com/</url>
     </course>
 </courses-response>
