@@ -41,6 +41,11 @@ If given, then the server MUST limit the list of returned course IDs to only
 such, which are tied to the Programme with the given ID.
 
 
+### `include_deprecated` (optional)
+
+If given, then the server MUST include deprecated courses in the list of returned course IDs.
+
+
 Handling of invalid parameters
 ------------------------------
 

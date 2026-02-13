@@ -262,7 +262,7 @@
                                         so that they may be referenced from course instances.
 
                                         Servers MUST omit deprecated courses from the course index
-                                        (unless deprecated is used as a filter).
+                                        (unless `include_deprecated` is used as a parameter).
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
