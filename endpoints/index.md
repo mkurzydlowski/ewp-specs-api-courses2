@@ -1,5 +1,5 @@
 Course Index endpoint
-===================
+=====================
 
 * [What is the status of this document?][statuses]
 * [See the index of all other EWP Specifications][develhub]
@@ -8,25 +8,19 @@ Course Index endpoint
 Summary
 -------
 
-This endpoint allows clients to see the list of all courses known to
-a particular HEI.
+This endpoint allows clients to see the list of all courses.
 
 
 Request method
 --------------
 
- * Requests MUST be made with either HTTP GET or HTTP POST method. Servers MUST
-   support both these methods. Servers SHOULD reject all other request methods.
-
- * Clients are advised to use POST when passing a large number of parameters
-   (servers MAY set a limit on their GET query string length).
+ * Requests MUST be made with HTTP GET. Servers SHOULD reject all other request methods.
 
 
 Request parameters
 ------------------
 
-Parameters MUST be provided either in a query string (for GET requests), or in
-the `application/x-www-form-urlencoded` format (for POST requests).
+Parameters MUST be provided in a query string.
 
 
 ### `ounit_id` (optional)
@@ -62,7 +56,4 @@ for further information.
 
 [develhub]: http://developers.erasmuswithoutpaper.eu/
 [statuses]: https://github.com/erasmus-without-paper/ewp-specs-management#statuses
-[registry-spec]: https://github.com/erasmus-without-paper/ewp-specs-api-registry
-[discovery-api]: https://github.com/erasmus-without-paper/ewp-specs-api-discovery
-[echo]: https://github.com/erasmus-without-paper/ewp-specs-api-echo
 [error-handling]: https://github.com/erasmus-without-paper/ewp-specs-architecture#error-handling

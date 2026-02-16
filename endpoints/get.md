@@ -8,9 +8,8 @@ Course Get endpoint
 Summary
 -------
 
-This endpoint allows the client to get the content of a specific courses (by their
-IDs). If you haven't read it yet, then read
-[the Courses API introduction][courses-api] first.
+This endpoint allows the client to get the content of specific courses (by their
+IDs).
 
 
 Request method
@@ -71,6 +70,4 @@ further information.
 
 [develhub]: http://developers.erasmuswithoutpaper.eu/
 [statuses]: https://github.com/erasmus-without-paper/ewp-specs-management#statuses
-[courses-api]: https://github.com/erasmus-without-paper/ewp-specs-api-courses
-[echo]: https://github.com/erasmus-without-paper/ewp-specs-api-echo
 [error-handling]: https://github.com/erasmus-without-paper/ewp-specs-architecture#error-handling
