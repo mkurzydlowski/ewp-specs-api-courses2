@@ -83,42 +83,9 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="ects" type="xs:decimal">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        Number of ECTS credits which the student should achieve by completing
-                                        this course.
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:element name="languageOfInstruction" type="xs:language" maxOccurs="unbounded">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        An BCP 47 code of the language which has been used
-                                        as the primary language of teaching during the classes.
-                                        E.g. "pl" if the course is instructed/conducted in Polish.
-
-                                        Language tags allow specifying languages and their variations.
-
-                                        Examples:
-                                        — `el` for Greek;
-                                        — `el-Latn` for Greek in the Latin script;
-                                        — `el-CY` for Cypriot Greek;
-                                        — `el-Latn-CY` for Cypriot Greek in the Latin script.
-
-                                        References:
-                                        — Current specification – https://www.rfc-editor.org/info/bcp47
-                                        — Language subtag registry – https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:element name="lastModified" type="xs:dateTime">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        Time of the last change to this course.
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
+                            <xs:element ref="ects"/>
+                            <xs:element ref="languageOfInstruction" maxOccurs="unbounded"/>
+                            <xs:element ref="lastModified"/>
                             <xs:element name="description" type="ewp:MultilineStringWithOptionalLang" minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
@@ -150,44 +117,10 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="elmAssessmentType" type="xs:string" minOccurs="0" maxOccurs="unbounded">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        Assessment type as defined in the European Learning Model (ELM).
-
-                                        https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/assessment/25831c2
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:element name="elmLearningActivityType" type="xs:string" minOccurs="0" maxOccurs="unbounded">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        Learning activity type as defined in the European Learning Model (ELM).
-
-                                        https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/learning-activity/25831c2
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:element name="elmLearningOpportunityType" type="xs:string" minOccurs="0" maxOccurs="unbounded">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        Learning opportunity type as defined in the European Learning Model (ELM).
-
-                                        Note: limited to the items in the controlled vocabulary that may apply to courses.
-
-                                        https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/learning-opportunity/25831c2
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:element name="elmModeOfLearning" type="xs:string" minOccurs="0" maxOccurs="unbounded">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        Mode of learning and assessment as defined in the European Learning Model (ELM).
-
-                                        https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/learning-assessment/25831c2
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
+                            <xs:element ref="elmAssessmentType" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element ref="elmLearningActivityType" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element ref="elmLearningOpportunityType" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element ref="elmModeOfLearning" minOccurs="0" maxOccurs="unbounded"/>
                             <xs:element name="iscedCode" type="xs:string" minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
@@ -271,5 +204,80 @@
                 </xs:element>
             </xs:sequence>
         </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ects" type="xs:decimal">
+        <xs:annotation>
+            <xs:documentation>
+                Number of ECTS credits which the student should achieve by completing
+                this course.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="languageOfInstruction" type="xs:language">
+        <xs:annotation>
+            <xs:documentation>
+                An BCP 47 code of the language which has been used
+                as the primary language of teaching during the classes.
+                E.g. "pl" if the course is instructed/conducted in Polish.
+
+                Language tags allow specifying languages and their variations.
+
+                Examples:
+                — `el` for Greek;
+                — `el-Latn` for Greek in the Latin script;
+                — `el-CY` for Cypriot Greek;
+                — `el-Latn-CY` for Cypriot Greek in the Latin script.
+
+                References:
+                — Current specification – https://www.rfc-editor.org/info/bcp47
+                — Language subtag registry – https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="lastModified" type="xs:dateTime">
+        <xs:annotation>
+            <xs:documentation>
+                Time of the last change to this course.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="elmAssessmentType" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>
+                Assessment type as defined in the European Learning Model (ELM).
+
+                https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/assessment/25831c2
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="elmLearningActivityType" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>
+                Learning activity type as defined in the European Learning Model (ELM).
+
+                https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/learning-activity/25831c2
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="elmLearningOpportunityType" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>
+                Learning opportunity type as defined in the European Learning Model (ELM).
+
+                Note: limited to the items in the controlled vocabulary that may apply to courses.
+
+                https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/learning-opportunity/25831c2
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="elmModeOfLearning" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>
+                Mode of learning and assessment as defined in the European Learning Model (ELM).
+
+                https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/learning-assessment/25831c2
+            </xs:documentation>
+        </xs:annotation>
     </xs:element>
 </xs:schema>
