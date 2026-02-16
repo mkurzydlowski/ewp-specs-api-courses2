@@ -23,8 +23,7 @@
     <xs:element name="courses-index-response">
         <xs:annotation>
             <xs:documentation>
-                This describes the format of the response returned by the `index` endpoint of
-                EWP Courses API.
+                This describes the format of the response returned by the `index` endpoint of EWP Courses API.
             </xs:documentation>
         </xs:annotation>
         <xs:complexType>
