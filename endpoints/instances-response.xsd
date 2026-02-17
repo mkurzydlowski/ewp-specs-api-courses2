@@ -1,0 +1,198 @@
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:ewp="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
+    xmlns:trm="https://github.com/erasmus-without-paper/ewp-specs-types-academic-term/tree/stable-v2"
+    elementFormDefault="qualified"
+
+    targetNamespace="https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/stable-v1"
+    xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/stable-v1"
+>
+    <xs:import
+        schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-architecture/stable-v1/common-types.xsd"
+        namespace="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
+    />
+
+    <xs:import
+        schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-types-academic-term/stable-v2/schema.xsd"
+        namespace="https://github.com/erasmus-without-paper/ewp-specs-types-academic-term/tree/stable-v2"
+    />
+
+    <xs:include
+        schemaLocation="get-response.xsd"
+    />
+
+    <xs:annotation>
+        <xs:documentation>
+            This schema is a part of the Erasmus Without Paper project. Before you start
+            using it, make sure you have read the general rules described here:
+
+            https://developers.erasmuswithoutpaper.eu/
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="instances-response">
+        <xs:annotation>
+            <xs:documentation>
+                This describes the format of the response returned by the EWP Courses Instances API.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="course-instance" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation>
+                            This represents a single course instance.
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="id" type="ewp:AsciiPrintableIdentifier">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Unique identifier of this course instance. It SHOULD NOT be displayed to the user
+                                        — use course code and academic term to display a course instance.
+
+                                        Server implementers MUST use immutable surrogate keys for their work with EWP
+                                        (we recommend choosing UUID surrogate keys). You can read about this here:
+                                        https://github.com/erasmus-without-paper/ewp-specs-architecture#ids
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="course-id" type="ewp:AsciiPrintableIdentifier">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Identifier of the course of this course instance.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="start-date" type="xs:date">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        The first date in which the course instance was offered.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="end-date" type="xs:date">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        The last date in which the course instance was offered.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="academic-term-id" type="trm:EwpAcademicTermId">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Describes the academic term id in which the course takes place.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element ref="ects"/>
+                            <xs:element ref="language-of-instruction" maxOccurs="unbounded"/>
+                            <xs:element ref="last-modified"/>
+                            <xs:element ref="elm-assessment-type" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element ref="elm-learning-activity-type" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element ref="elm-learning-opportunity-type" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element ref="elm-mode-of-learning" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="engagement-hours" type="xs:decimal" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Total number of engagement hours during the entire course.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="grading-scheme" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        An optional element describing the grading scheme used in this course.
+                                        https://github.com/erasmus-without-paper/ewp-specs-api-courses/issues/5
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="label" maxOccurs="unbounded" type="ewp:StringWithOptionalLang">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    A label which briefly summarizes the grading scheme used. It should contain a
+                                                    short and descriptive string which describes the range of all possible grade
+                                                    values. If possible, this label should be enough
+                                                    for the reader to enumerate all these values. E.g. "0-50", "A-F",
+                                                    "passed / not passed", or "ECTS".
+
+                                                    If this label is language-specific, then multiple labels with `xml:lang`
+                                                    attribute may be provided (preferably English among them). If the label is
+                                                    non-language-specific, servers are advised to skip the `xml:lang` attribute
+                                                    altogether.
+
+                                                    It is NOT a unique identifier, and it is NOT designed to be easily parsed by a
+                                                    computer. It's simply supposed to be a human-readable label. See discussion
+                                                    here: https://github.com/erasmus-without-paper/ewp-specs-api-courses/issues/5
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="description" minOccurs="0" maxOccurs="unbounded" type="ewp:MultilineStringWithOptionalLang">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    Detailed description, e.g. for a tooltip beside the label.
+
+                                                    It can be provided in multiple languages (preferably English among them), and
+                                                    it may contain a full name of the grading system, and/or a full list of all
+                                                    possible grade labels.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="result-distribution" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Describes a histogram of results achieved by all the students of this
+                                        course instance (including the ones who have failed the course). Note that
+                                        labels of the histogram are not integers, e.g. they may contain ranges (like
+                                        "10-20", or "more than 150").
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="category" maxOccurs="unbounded">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    This describes a single range within the histogram.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:attribute name="label" type="xs:string" use="required">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            The label of the histogram range. Should correspond to the grading scheme
+                                                            which has been used. E.g. "C", or "20-30". If possible, the label should
+                                                            be understandable in any language. If not, you should try to use English.
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            The number of students whose grades fall within that category.
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="description" type="ewp:MultilineStringWithOptionalLang" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    Additional description of the histogram (possibly in multiple languages).
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

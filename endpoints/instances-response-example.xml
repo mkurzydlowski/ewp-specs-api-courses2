@@ -1,0 +1,38 @@
+<instances-response
+    xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/stable-v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/stable-v1
+        instances-response.xsd
+    "
+>
+    <course-instance>
+        <id>f6d14b1f-f330-4956-8819-e24feb12d519</id>
+        <course-id>f6d14b1f-f330-4956-8819-e24feb12d519</course-id>
+        <start-date>2025-02-01</start-date>
+        <end-date>2025-06-30</end-date>
+        <academic-term-id>2025/2026-2/2</academic-term-id>
+        <ects>7.5</ects>
+        <language-of-instruction>en</language-of-instruction>
+        <last-modified>2025-09-01T12:00:00Z</last-modified>
+        <elm-assessment-type>3484bd7e51</elm-assessment-type>
+        <elm-assessment-type>6e6cb2cc78</elm-assessment-type>
+        <elm-learning-activity-type>ff436ea7c9</elm-learning-activity-type>
+        <elm-learning-activity-type>3c8bd58d62</elm-learning-activity-type>
+        <elm-learning-opportunity-type>05053c1cbe</elm-learning-opportunity-type>
+        <elm-mode-of-learning>e92d221e4d</elm-mode-of-learning>
+        <engagement-hours>42</engagement-hours>
+        <grading-scheme>
+            <label xml:lang="en">0-100</label>
+            <description xml:lang="en">Numeric grading system from 0 (fail) to 100 (excellent).</description>
+        </grading-scheme>
+        <result-distribution>
+            <category label="90-100" count="5"/>
+            <category label="80-89" count="12"/>
+            <category label="70-79" count="25"/>
+            <category label="60-69" count="10"/>
+            <category label="0-59" count="3"/>
+            <description xml:lang="en">This distribution includes all students who took the exam.</description>
+        </result-distribution>
+    </course-instance>
+</instances-response>
