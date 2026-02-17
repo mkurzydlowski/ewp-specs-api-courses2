@@ -80,27 +80,8 @@
                             <xs:element ref="ects"/>
                             <xs:element ref="language-of-instruction" maxOccurs="unbounded"/>
                             <xs:element ref="last-modified"/>
-                            <xs:element name="description" type="ewp:MultilineStringWithOptionalLang" minOccurs="0" maxOccurs="unbounded">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        Description of the course with optional language code.
-
-                                        This field MAY be displayed to the user, but it might be better to refer the
-                                        user to a more "user-friendly" web page instead (the one given in the `url`
-                                        element above). The primary purpose of the description field is to provide
-                                        keywords for full-text searching. Server implementers are encouraged to provide
-                                        as many types of information as they like here, but this information should
-                                        still be divided in meaningful paragraphs and be human-readable.
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:element name="learning-outcomes" type="ewp:MultilineStringWithOptionalLang" minOccurs="0" maxOccurs="unbounded">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        Learning outcomes with optional language code.
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
+                            <xs:element ref="description" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element ref="learning-outcomes" minOccurs="0" maxOccurs="unbounded"/>
                             <xs:element name="term-id" type="trm:TermId" minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
@@ -115,19 +96,7 @@
                             <xs:element ref="elm-learning-activity-type" minOccurs="0" maxOccurs="unbounded"/>
                             <xs:element ref="elm-learning-opportunity-type" minOccurs="0" maxOccurs="unbounded"/>
                             <xs:element ref="elm-mode-of-learning" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element name="isced-code" type="xs:string" minOccurs="0" maxOccurs="unbounded">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        The ISCED-F code of the course.
-
-                                        Multiple values are allowed in order to support multidisciplinary courses.
-
-                                        ISCED-F codes define fields of education and training at the secondary,
-                                        post-secondary and tertiary levels of education. Details:
-                                        https://www.uis.unesco.org/Education/Documents/isced-fields-of-education-training-2013.pdf
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
+                            <xs:element ref="isced-code" minOccurs="0" maxOccurs="unbounded"/>
                             <xs:element name="local-classification" minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
@@ -163,18 +132,7 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="url" type="ewp:HTTPWithOptionalLang" minOccurs="0" maxOccurs="unbounded">
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        The URL of the web page with the description of the course.
-
-                                        The `xml:lang` attribute, if given, SHOULD represent the language of this page.
-                                        Multiple URLs can be provided (with different `xml:lang` values). It is also
-                                        perfectly okay to provide a single URL that dynamically detects the viewer's
-                                        language preferences (in this case, no `xml:lang` attribute should be given).
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
+                            <xs:element ref="url" minOccurs="0" maxOccurs="unbounded"/>
                             <xs:element name="deprecated" type="xs:boolean" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation>
@@ -250,6 +208,27 @@
             </xs:documentation>
         </xs:annotation>
     </xs:element>
+    <xs:element name="description" type="ewp:MultilineStringWithOptionalLang">
+        <xs:annotation>
+            <xs:documentation>
+                Description with an optional language code.
+
+                This field MAY be displayed to the user, but it might be better to refer the
+                user to a more "user-friendly" web page instead (the one given in the `url`).
+                The primary purpose of the description field is to provide
+                keywords for full-text searching. Server implementers are encouraged to provide
+                as many types of information as they like here, but this information should
+                still be divided in meaningful paragraphs and be human-readable.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="learning-outcomes" type="ewp:MultilineStringWithOptionalLang">
+        <xs:annotation>
+            <xs:documentation>
+                Learning outcomes with optional language code.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
     <xs:element name="elm-assessment-type" type="xs:string">
         <xs:annotation>
             <xs:documentation>
@@ -285,6 +264,29 @@
                 Mode of learning and assessment as defined in the European Learning Model (ELM).
 
                 https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/learning-assessment/25831c2
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="isced-code" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>
+                The ISCED-F code of the course/programme.
+
+                ISCED-F codes define fields of education and training at the secondary,
+                post-secondary and tertiary levels of education. Details:
+                https://www.uis.unesco.org/Education/Documents/isced-fields-of-education-training-2013.pdf
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="url" type="ewp:HTTPWithOptionalLang">
+        <xs:annotation>
+            <xs:documentation>
+                The URL of the web page with the description.
+
+                The `xml:lang` attribute, if given, SHOULD represent the language of this page.
+                Multiple URLs can be provided (with different `xml:lang` values). It is also
+                perfectly okay to provide a single URL that dynamically detects the viewer's
+                language preferences (in this case, no `xml:lang` attribute should be given).
             </xs:documentation>
         </xs:annotation>
     </xs:element>
