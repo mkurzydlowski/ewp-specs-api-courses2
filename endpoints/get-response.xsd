@@ -59,13 +59,7 @@
                                 <xs:annotation>
                                     <xs:documentation>
                                         The name(s) of the course.
-
-                                        Note for server implementers:
-
-                                        You MUST provide at least one name, preferably in English. If your node does
-                                        not have a name (or cannot have a name), then you should attempt to generate
-                                        one, for example, based on its ID and type. As a last resort, use an empty
-                                        string here.
+                                        You MUST provide at least one name, preferably in English.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>

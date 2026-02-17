@@ -26,7 +26,7 @@ Parameters MUST be provided in a query string.
 ### `ounit_id` (optional)
 
 If given, then the server MUST limit the list of returned course IDs to only
-such, which are tied to the Organizational Unit with the given ID.
+such, which are tied to the Organisational Unit with the given ID.
 
 
 ### `programme_id` (optional)
