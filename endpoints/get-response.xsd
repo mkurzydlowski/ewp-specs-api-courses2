@@ -107,13 +107,13 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="academic-term-id" type="trm:TermId" minOccurs="0" maxOccurs="unbounded">
+                            <xs:element name="term-id" type="trm:TermId" minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
-                                        Describes the academic term id in which the course takes place.
+                                        Describes the term in which the course takes place.
 
                                         Multiple values are allowed to support courses delivered
-                                        in more than one academic term throughout an academic year.
+                                        in more than one term throughout an academic year.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
