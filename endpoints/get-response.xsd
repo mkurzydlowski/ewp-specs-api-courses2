@@ -84,8 +84,8 @@
                                 </xs:annotation>
                             </xs:element>
                             <xs:element ref="ects"/>
-                            <xs:element ref="languageOfInstruction" maxOccurs="unbounded"/>
-                            <xs:element ref="lastModified"/>
+                            <xs:element ref="language-of-instruction" maxOccurs="unbounded"/>
+                            <xs:element ref="last-modified"/>
                             <xs:element name="description" type="ewp:MultilineStringWithOptionalLang" minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
@@ -100,7 +100,7 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="learningOutcomes" type="ewp:MultilineStringWithOptionalLang" minOccurs="0" maxOccurs="unbounded">
+                            <xs:element name="learning-outcomes" type="ewp:MultilineStringWithOptionalLang" minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
                                         Learning outcomes with optional language code.
@@ -117,11 +117,11 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element ref="elmAssessmentType" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element ref="elmLearningActivityType" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element ref="elmLearningOpportunityType" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element ref="elmModeOfLearning" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element name="iscedCode" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+                            <xs:element ref="elm-assessment-type" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element ref="elm-learning-activity-type" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element ref="elm-learning-opportunity-type" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element ref="elm-mode-of-learning" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="isced-code" type="xs:string" minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
                                         The ISCED-F code of the course.
@@ -134,7 +134,7 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="localClassification" minOccurs="0" maxOccurs="unbounded">
+                            <xs:element name="local-classification" minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
                                         A local (national or other) classification system for fields of study,
@@ -145,12 +145,12 @@
                                 </xs:annotation>
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="classificationSystem" type="xs:string"/>
-                                        <xs:element name="classificationValue" type="xs:string"/>
+                                        <xs:element name="classification-system" type="xs:string"/>
+                                        <xs:element name="classification-value" type="xs:string"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="restrictedToLocalStudents" type="xs:boolean" minOccurs="0">
+                            <xs:element name="restricted-to-local-students" type="xs:boolean" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation>
                                         Return true when the course is restricted to students enrolled at this Institution.
@@ -159,7 +159,7 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="restrictedToAllianceStudents" type="xs:boolean" minOccurs="0">
+                            <xs:element name="restricted-to-alliance-students" type="xs:boolean" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation>
                                         Return true when the course is restricted to students
@@ -214,7 +214,7 @@
             </xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="languageOfInstruction" type="xs:language">
+    <xs:element name="language-of-instruction" type="xs:language">
         <xs:annotation>
             <xs:documentation>
                 An BCP 47 code of the language which has been used
@@ -235,14 +235,14 @@
             </xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="lastModified" type="xs:dateTime">
+    <xs:element name="last-modified" type="xs:dateTime">
         <xs:annotation>
             <xs:documentation>
                 Time of the last change to this course.
             </xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="elmAssessmentType" type="xs:string">
+    <xs:element name="elm-assessment-type" type="xs:string">
         <xs:annotation>
             <xs:documentation>
                 Assessment type as defined in the European Learning Model (ELM).
@@ -251,7 +251,7 @@
             </xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="elmLearningActivityType" type="xs:string">
+    <xs:element name="elm-learning-activity-type" type="xs:string">
         <xs:annotation>
             <xs:documentation>
                 Learning activity type as defined in the European Learning Model (ELM).
@@ -260,7 +260,7 @@
             </xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="elmLearningOpportunityType" type="xs:string">
+    <xs:element name="elm-learning-opportunity-type" type="xs:string">
         <xs:annotation>
             <xs:documentation>
                 Learning opportunity type as defined in the European Learning Model (ELM).
@@ -271,7 +271,7 @@
             </xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:element name="elmModeOfLearning" type="xs:string">
+    <xs:element name="elm-mode-of-learning" type="xs:string">
         <xs:annotation>
             <xs:documentation>
                 Mode of learning and assessment as defined in the European Learning Model (ELM).
