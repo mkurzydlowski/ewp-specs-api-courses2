@@ -49,37 +49,21 @@
 
                                     The policies described in this element apply to all endpoints of this API (the
                                     `*-url` elements below). Clients SHOULD consult this element before accessing
-                                    any of these endpoints (otherwise, their request might be rejected by the
-                                    server).
+                                    any of these endpoints (otherwise, the server might reject their request).
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="get-url" type="ewp:HTTPS">
+                        <xs:element name="courses-url" type="ewp:HTTPS">
                             <xs:annotation>
                                 <xs:documentation>
-                                    An URL at which the Course `get` endpoint is being served.
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="max-course-ids" type="xs:positiveInteger">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    The maximum number of `course_id` parameters the server is willing to accept
-                                    in one `get` request.
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="index-url" type="ewp:HTTPS">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    An URL at which the Course `index` endpoint is being served.
+                                    An URL at which the `courses` endpoint is being served.
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
                         <xs:element name="instances-url" type="ewp:HTTPS">
                             <xs:annotation>
                                 <xs:documentation>
-                                    An URL at which the Course `instances` endpoint is being served.
+                                    An URL at which the `instances` endpoint is being served.
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>

@@ -1,10 +1,10 @@
-<courses-get-response
+<courses-response
     xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/stable-v1"
     xmlns:trm="https://github.com/erasmus-without-paper/ewp-specs-types-academic-term/tree/stable-v2"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
         https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/stable-v1
-        get-response.xsd
+        courses-response.xsd
     "
 >
     <course>
@@ -36,4 +36,4 @@
         </local-classification>
         <url>https://example.com/</url>
     </course>
-</courses-get-response>
+</courses-response>

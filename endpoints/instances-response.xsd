@@ -17,9 +17,7 @@
         namespace="https://github.com/erasmus-without-paper/ewp-specs-types-academic-term/tree/stable-v2"
     />
 
-    <xs:include
-        schemaLocation="get-response.xsd"
-    />
+    <xs:include schemaLocation="courses-response.xsd"/>
 
     <xs:annotation>
         <xs:documentation>
