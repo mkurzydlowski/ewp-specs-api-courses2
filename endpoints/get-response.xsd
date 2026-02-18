@@ -162,6 +162,8 @@
                                 <xs:annotation>
                                     <xs:documentation>
                                         Identifier of a programme which includes the present course in its curricular plan.
+
+                                        See EWP Programmes API for more details.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>

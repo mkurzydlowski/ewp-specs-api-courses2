@@ -26,13 +26,15 @@ Parameters MUST be provided in a query string.
 ### `ounit_id` (optional)
 
 If given, then the server MUST limit the list of returned course IDs to only
-such, which are tied to the Organisational Unit with the given ID.
+such, which are tied to the organisational unit with the given ID.
 
 
 ### `programme_id` (optional)
 
 If given, then the server MUST limit the list of returned course IDs to only
-such, which are tied to the Programme with the given ID.
+such, which are tied to the programme with the given ID.
+
+See EWP Programmes API for more details.
 
 
 ### `include_deprecated` (optional)
