@@ -20,8 +20,9 @@ Request method
 Request parameters
 ------------------
 
-Parameters MUST be provided in a query string. Exactly one of the following
-parameters MUST be present:
+Parameters MUST be provided in a query string.
+If no parameters are provided, then all courses offered by the HEI are returned.
+You MUST NOT provide more than one of the following filtering parameters:
 
 
 ### `ounit_id` (optional)
