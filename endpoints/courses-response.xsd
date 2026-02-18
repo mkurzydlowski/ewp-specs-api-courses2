@@ -151,14 +151,16 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="prerequisite-course-id" type="ewp:AsciiPrintableIdentifier" maxOccurs="unbounded">
+                            <xs:element name="prerequisite-course-id" type="ewp:AsciiPrintableIdentifier"
+                                        minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
                                         Identifier of a course that must be completed before enrollment to this course is allowed.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="related-programme-id" type="ewp:AsciiPrintableIdentifier" maxOccurs="unbounded">
+                            <xs:element name="related-programme-id" type="ewp:AsciiPrintableIdentifier"
+                                        minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
                                         Identifier of a programme which includes the present course in its curricular plan.
