@@ -37,8 +37,7 @@
                 <xs:element name="course" minOccurs="0" maxOccurs="unbounded">
                     <xs:annotation>
                         <xs:documentation>
-                            This represents a single course. Servers will produce one such element for
-                            each of the `course_id` values passed in the Courses API call.
+                            This represents a single course.
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
