@@ -36,7 +36,7 @@
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="course-instance" minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="instance" minOccurs="0" maxOccurs="unbounded">
                     <xs:annotation>
                         <xs:documentation>
                             This represents a single course instance.
@@ -44,11 +44,14 @@
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="id" type="ewp:AsciiPrintableIdentifier">
+                            <xs:element name="loi-id" type="LoiID">
                                 <xs:annotation>
                                     <xs:documentation>
-                                        Unique identifier of this course instance. It SHOULD NOT be displayed to the user
+                                        Unique identifier of this course instance (LOI). It SHOULD NOT be displayed to the user
                                         — use course code and academic term to display a course instance.
+
+                                        Read an introduction on LOS IDs here:
+                                        https://github.com/erasmus-without-paper/ewp-specs-api-courses#unique-identifiers
 
                                         Server implementers MUST use immutable surrogate keys for their work with EWP
                                         (we recommend choosing UUID surrogate keys). You can read about this here:
@@ -56,10 +59,10 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="course-id" type="ewp:AsciiPrintableIdentifier">
+                            <xs:element name="los-id" type="LosID">
                                 <xs:annotation>
                                     <xs:documentation>
-                                        Identifier of the course of this course instance.
+                                        Identifier of the course (LOS) of this course instance (LOI).
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
@@ -193,4 +196,32 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+    <xs:simpleType name="LoiID">
+        <xs:annotation>
+            <xs:documentation>
+                Unique local identifier of Learning Opportunity Instance. This is very similar
+                to the LosID type, but it is used for instances (not specifications).
+
+                Read a detailed introduction here:
+                https://github.com/erasmus-without-paper/ewp-specs-api-courses#unique-identifiers
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="ewp:AsciiPrintableIdentifier">
+            <xs:pattern value="CRI/(.{1,40})">
+                <xs:annotation>
+                    <xs:documentation>
+                        The actual internal ID of the LOS entity MUST be prefixed with one of the
+                        following strings:
+
+                        — "CRI/" – if it is an instance of "Course" type LOS.
+
+                        More prefixes MAY be introduced in the future. Clients SHOULD expect that (e.g.
+                        they should accept unknown prefixes and behave as if the referenced entity did
+                        not exist).
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>

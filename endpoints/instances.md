@@ -8,7 +8,7 @@ Instances endpoint
 Summary
 -------
 
-This endpoint lists instances of a given course.
+This endpoint lists instances (LOI) of a given course (LOS).
 
 
 Request method
@@ -24,14 +24,14 @@ Parameters MUST be provided in a query string. Exactly one of the following
 parameters MUST be present:
 
 
-### `course_id` (optional)
+### `los_id` (optional)
 
-Identifier of the course which instances are to be returned.
+Identifier of the course (LOS) which instances are to be returned.
 
 
-### `instance_id` (optional)
+### `loi_id` (optional)
 
-Identifier of the course instance to be returned.
+Identifier of the course instance (LOI) to be returned.
 
 
 Handling of invalid parameters

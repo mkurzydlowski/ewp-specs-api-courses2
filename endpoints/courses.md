@@ -8,7 +8,7 @@ Courses endpoint
 Summary
 -------
 
-This endpoint lists courses.
+This endpoint lists courses (LOS).
 
 
 Request method
@@ -39,9 +39,9 @@ such, which are tied to the programme with the given ID.
 See EWP Programmes API for more details.
 
 
-### `course_id` (optional)
+### `los_id` (optional)
 
-Identifier of the course to be returned.
+Identifier of the course (LOS) to be returned.
 
 
 You MAY also add this parameter:

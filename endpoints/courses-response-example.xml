@@ -8,10 +8,10 @@
     "
 >
     <course>
-        <id>f6d14b1f-f330-4956-8819-e24feb12d519</id>
+        <los-id>CR/f6d14b1f-f330-4956-8819-e24feb12d519</los-id>
         <title xml:lang="no">Grunnkurs i matematikk</title>
         <title xml:lang="en">Introductory calculus</title>
-        <code>COUR01</code>
+        <los-code>COUR01</los-code>
         <ects>15</ects>
         <language-of-instruction>en</language-of-instruction>
         <last-modified>2025-09-01T12:00:00Z</last-modified>

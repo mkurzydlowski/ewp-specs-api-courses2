@@ -43,11 +43,14 @@
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="id" type="ewp:AsciiPrintableIdentifier">
+                            <xs:element name="los-id" type="LosID">
                                 <xs:annotation>
                                     <xs:documentation>
-                                        Unique identifier of this course. It SHOULD NOT be displayed to the user (use
-                                        `code` for that).
+                                        Unique identifier of this course (LOS). It SHOULD NOT be displayed to the user (use
+                                        `los-code` for that).
+
+                                        Read an introduction on LOS IDs here:
+                                        https://github.com/erasmus-without-paper/ewp-specs-api-courses#unique-identifiers
 
                                         Server implementers MUST use immutable surrogate keys for their work with EWP
                                         (we recommend choosing UUID surrogate keys). You can read about this here:
@@ -63,10 +66,10 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="code" type="xs:string">
+                            <xs:element name="los-code" type="xs:string">
                                 <xs:annotation>
                                     <xs:documentation>
-                                        Since course IDs should be surrogate identifiers (and, as such, should not be
+                                        Since LOS IDs should be surrogate identifiers (and, as such, should not be
                                         displayed to the user), we allow additional "human-readable" unique codes (aka
                                         "natural identifiers") to be provided here. These codes MAY be displayed to the
                                         user along the course title, but they are *not used* to identify entities in EWP
@@ -294,4 +297,34 @@
             </xs:documentation>
         </xs:annotation>
     </xs:element>
+
+    <xs:simpleType name="LosID">
+        <xs:annotation>
+            <xs:documentation>
+                Unique local identifier of Learning Opportunity Specification. These IDs take
+                a form of a "Type/X" string, where "Type" is a short code of the LOS'es type, and
+                "X" is the internal surrogate key of the LOS, as exposed by the owner HEI
+                (preferably a UUID, but any other values are also permitted).
+
+                Read a detailed introduction here:
+                https://github.com/erasmus-without-paper/ewp-specs-api-courses#unique-identifiers
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="ewp:AsciiPrintableIdentifier">
+            <xs:pattern value="CR/(.{1,40})">
+                <xs:annotation>
+                    <xs:documentation>
+                        The actual internal ID of the LOS entity MUST be prefixed with one of the
+                        following strings:
+
+                        — "CR/" – if it is a "Course" type LOS.
+
+                        More prefixes MAY be introduced in the future. Clients SHOULD expect that (e.g.
+                        they should accept unknown prefixes and behave as if the referenced entity did
+                        not exist).
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>
