@@ -19,7 +19,7 @@
         <description xml:lang="en">Some description</description>
         <learning-outcomes xml:lang="en">These are the learning outcomes of the Course</learning-outcomes>
         <term-id>
-            <trm:term-number>1</trm:term-number>
+            <trm:term-number>2</trm:term-number>
             <trm:total-terms>2</trm:total-terms>
         </term-id>
         <elm-assessment-type>3484bd7e51</elm-assessment-type>

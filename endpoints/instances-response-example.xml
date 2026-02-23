@@ -1,5 +1,6 @@
 <instances-response
     xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/stable-v1"
+    xmlns:trm="https://github.com/erasmus-without-paper/ewp-specs-types-academic-term/tree/stable-v2"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
         https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/stable-v1
@@ -9,9 +10,18 @@
     <instance>
         <loi-id>CRI/f6d14b1f-f330-4956-8819-e24feb12d519</loi-id>
         <los-id>CR/f6d14b1f-f330-4956-8819-e24feb12d519</los-id>
-        <start-date>2025-02-01</start-date>
-        <end-date>2025-06-30</end-date>
-        <academic-term-id>2025/2026-2/2</academic-term-id>
+        <start-date>2025-02-05</start-date>
+        <end-date>2025-06-25</end-date>
+        <trm:academic-term>
+            <trm:academic-year-id>2025/2026</trm:academic-year-id>
+            <trm:term-id>
+                <trm:term-number>2</trm:term-number>
+                <trm:total-terms>2</trm:total-terms>
+            </trm:term-id>
+            <trm:display-name xml:lang="en">Spring Semester 2025/2026</trm:display-name>
+            <trm:start-date>2025-02-01</trm:start-date>
+            <trm:end-date>2025-06-30</trm:end-date>
+        </trm:academic-term>
         <ects>7.5</ects>
         <language-of-instruction>en</language-of-instruction>
         <last-modified>2025-09-01T12:00:00Z</last-modified>

@@ -80,10 +80,10 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="academic-term-id" type="trm:EwpAcademicTermId">
+                            <xs:element ref="trm:academic-term">
                                 <xs:annotation>
                                     <xs:documentation>
-                                        Describes the academic term id in which the course takes place.
+                                        Describes the academic term in which the course instance takes place.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
