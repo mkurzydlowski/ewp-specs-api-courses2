@@ -105,7 +105,7 @@
                                         A local (national or other) classification system for fields of study,
                                         followed by the applicable value (or code) in that system.
 
-                                        Multiple values are allowed to support multidisplinary courses.
+                                        Multiple values are allowed to support multidisciplinary courses.
                                     </xs:documentation>
                                 </xs:annotation>
                                 <xs:complexType>
