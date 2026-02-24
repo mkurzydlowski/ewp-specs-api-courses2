@@ -1,5 +1,6 @@
 <courses-response
     xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/stable-v1"
+    xmlns:ewp="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
     xmlns:trm="https://github.com/erasmus-without-paper/ewp-specs-types-academic-term/tree/stable-v2"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
@@ -12,12 +13,12 @@
         <title xml:lang="no">Grunnkurs i matematikk</title>
         <title xml:lang="en">Introductory calculus</title>
         <los-code>COUR01</los-code>
-        <ects>15</ects>
-        <language-of-instruction>en</language-of-instruction>
-        <last-modified>2025-09-01T12:00:00Z</last-modified>
-        <description xml:lang="no">En eller annen beskrivelse</description>
-        <description xml:lang="en">Some description</description>
-        <learning-outcomes xml:lang="en">These are the learning outcomes of the Course</learning-outcomes>
+        <ewp:ects>15</ewp:ects>
+        <ewp:language-of-instruction>en</ewp:language-of-instruction>
+        <ewp:last-modified>2025-09-01T12:00:00Z</ewp:last-modified>
+        <ewp:description xml:lang="no">En eller annen beskrivelse</ewp:description>
+        <ewp:description xml:lang="en">Some description</ewp:description>
+        <ewp:learning-outcomes xml:lang="en">These are the learning outcomes of the Course</ewp:learning-outcomes>
         <term-id>
             <trm:term-number>2</trm:term-number>
             <trm:total-terms>2</trm:total-terms>
