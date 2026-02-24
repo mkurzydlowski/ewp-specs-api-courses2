@@ -98,7 +98,7 @@
                             <xs:element ref="elm-learning-activity-type" minOccurs="0" maxOccurs="unbounded"/>
                             <xs:element ref="elm-learning-opportunity-type" minOccurs="0" maxOccurs="unbounded"/>
                             <xs:element ref="elm-mode-of-learning" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element ref="isced-code" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="isced-f-code" type="ewp:IscedFCode" minOccurs="0" maxOccurs="unbounded"/>
                             <xs:element name="local-classification" minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
                                     <xs:documentation>
@@ -270,17 +270,6 @@
                 Mode of learning and assessment as defined in the European Learning Model (ELM).
 
                 https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/learning-assessment/25831c2
-            </xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:element name="isced-code" type="xs:string">
-        <xs:annotation>
-            <xs:documentation>
-                The ISCED-F code of the course/programme.
-
-                ISCED-F codes define fields of education and training at the secondary,
-                post-secondary and tertiary levels of education. Details:
-                https://www.uis.unesco.org/Education/Documents/isced-fields-of-education-training-2013.pdf
             </xs:documentation>
         </xs:annotation>
     </xs:element>
