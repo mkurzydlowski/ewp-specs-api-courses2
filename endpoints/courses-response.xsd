@@ -101,10 +101,289 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element ref="elm-assessment-type" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element ref="elm-learning-activity-type" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element ref="elm-learning-opportunity-type" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element ref="elm-mode-of-learning" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="elm-assessment-type" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Assessment type as defined in the European Learning Model (ELM).
+
+                                        https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/assessment/25831c2
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="de4d165a6c">
+                                            <xs:annotation>
+                                                <xs:documentation>artefact assessment</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="3484bd7e51">
+                                            <xs:annotation>
+                                                <xs:documentation>continuous evaluation</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="56539a6507">
+                                            <xs:annotation>
+                                                <xs:documentation>group performance</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="c_4f874951">
+                                            <xs:annotation>
+                                                <xs:documentation>Guided self-assessment</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="7331eb4762">
+                                            <xs:annotation>
+                                                <xs:documentation>level of attendance</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="2939dae15f">
+                                            <xs:annotation>
+                                                <xs:documentation>marked assignment</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="d30284d7df">
+                                            <xs:annotation>
+                                                <xs:documentation>oral examination</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="19a2e5e671">
+                                            <xs:annotation>
+                                                <xs:documentation>peer assessment</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="812e3b0ae1">
+                                            <xs:annotation>
+                                                <xs:documentation>peer review</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="4f03b91c0e">
+                                            <xs:annotation>
+                                                <xs:documentation>portfolio</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="6a4db9f11d">
+                                            <xs:annotation>
+                                                <xs:documentation>practical assessment</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="c_04b30a72">
+                                            <xs:annotation>
+                                                <xs:documentation>Presentation</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="c4256a2726">
+                                            <xs:annotation>
+                                                <xs:documentation>problem based learning</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="795dac4096">
+                                            <xs:annotation>
+                                                <xs:documentation>project work</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="b1b68f6735">
+                                            <xs:annotation>
+                                                <xs:documentation>quiz</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="c_2b3bd410">
+                                            <xs:annotation>
+                                                <xs:documentation>Self-assessment</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="6e6cb2cc78">
+                                            <xs:annotation>
+                                                <xs:documentation>written examination</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="elm-learning-activity-type" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Learning activity type as defined in the European Learning Model (ELM).
+
+                                        https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/learning-activity/25831c2
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="d46a826a39">
+                                            <xs:annotation>
+                                                <xs:documentation>apprenticeship</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="ff436ea7c9">
+                                            <xs:annotation>
+                                                <xs:documentation>classroom coursework</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="bf2e3a7bae">
+                                            <xs:annotation>
+                                                <xs:documentation>e-learning coursework</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="fd33e234ae">
+                                            <xs:annotation>
+                                                <xs:documentation>educational programme</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="bf5588ff84">
+                                            <xs:annotation>
+                                                <xs:documentation>internship</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="4357e0e681">
+                                            <xs:annotation>
+                                                <xs:documentation>job experience</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="3c8bd58d62">
+                                            <xs:annotation>
+                                                <xs:documentation>lab / simulation / practice coursework</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="c_5665a0ad">
+                                            <xs:annotation>
+                                                <xs:documentation>mentoring and monitoring activity</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="a7e556215a">
+                                            <xs:annotation>
+                                                <xs:documentation>research</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="b660f5dcea">
+                                            <xs:annotation>
+                                                <xs:documentation>self-motivated study</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="59eaf34fab">
+                                            <xs:annotation>
+                                                <xs:documentation>volunteering</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="efff75e10a">
+                                            <xs:annotation>
+                                                <xs:documentation>workshop, seminar or conference</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="elm-learning-opportunity-type" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Learning opportunity type as defined in the European Learning Model (ELM)
+                                        but limited to the items in the controlled vocabulary that may apply to Courses.
+
+                                        https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/learning-opportunity/25831c2
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="63f9f6180c">
+                                            <xs:annotation>
+                                                <xs:documentation>Apprenticeship</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="c_170b037d">
+                                            <xs:annotation>
+                                                <xs:documentation>Challenge</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="7e1ac538db">
+                                            <xs:annotation>
+                                                <xs:documentation>Class</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="05053c1cbe">
+                                            <xs:annotation>
+                                                <xs:documentation>Course</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="77b99de990">
+                                            <xs:annotation>
+                                                <xs:documentation>Internship</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="17744a2647">
+                                            <xs:annotation>
+                                                <xs:documentation>MOOC</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="11252a5207">
+                                            <xs:annotation>
+                                                <xs:documentation>Mentoring</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="8b965da2d4">
+                                            <xs:annotation>
+                                                <xs:documentation>Service learning</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="65a4cf5de2">
+                                            <xs:annotation>
+                                                <xs:documentation>Study visit</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="b2434ca358">
+                                            <xs:annotation>
+                                                <xs:documentation>Thesis</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="elm-mode-of-learning" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Mode of learning and assessment as defined in the European Learning Model (ELM).
+
+                                        https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/learning-assessment/25831c2
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="e92d221e4d">
+                                            <xs:annotation>
+                                                <xs:documentation>Blended</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="c_3a90b26d">
+                                            <xs:annotation>
+                                                <xs:documentation>Hybrid</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="920fbb3cbe">
+                                            <xs:annotation>
+                                                <xs:documentation>Online</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="9191af2ed9">
+                                            <xs:annotation>
+                                                <xs:documentation>Presential</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="7813801c77">
+                                            <xs:annotation>
+                                                <xs:documentation>Project based</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="ed4c557045">
+                                            <xs:annotation>
+                                                <xs:documentation>Research-Lab based</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                        <xs:enumeration value="729f3bed4b">
+                                            <xs:annotation>
+                                                <xs:documentation>Workbased</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:enumeration>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
                             <xs:element name="isced-f-code" type="ewp:IscedFCode" minOccurs="0" maxOccurs="unbounded"/>
                             <xs:element name="local-classification" minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
@@ -183,45 +462,6 @@
                 </xs:element>
             </xs:sequence>
         </xs:complexType>
-    </xs:element>
-
-    <xs:element name="elm-assessment-type" type="xs:string">
-        <xs:annotation>
-            <xs:documentation>
-                Assessment type as defined in the European Learning Model (ELM).
-
-                https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/assessment/25831c2
-            </xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:element name="elm-learning-activity-type" type="xs:string">
-        <xs:annotation>
-            <xs:documentation>
-                Learning activity type as defined in the European Learning Model (ELM).
-
-                https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/learning-activity/25831c2
-            </xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:element name="elm-learning-opportunity-type" type="xs:string">
-        <xs:annotation>
-            <xs:documentation>
-                Learning opportunity type as defined in the European Learning Model (ELM).
-
-                Note: limited to the items in the controlled vocabulary that may apply to courses.
-
-                https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/learning-opportunity/25831c2
-            </xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:element name="elm-mode-of-learning" type="xs:string">
-        <xs:annotation>
-            <xs:documentation>
-                Mode of learning and assessment as defined in the European Learning Model (ELM).
-
-                https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://data.europa.eu/snb/learning-assessment/25831c2
-            </xs:documentation>
-        </xs:annotation>
     </xs:element>
 
     <xs:simpleType name="LosID">
