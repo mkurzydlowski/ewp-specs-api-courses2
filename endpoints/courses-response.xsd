@@ -87,6 +87,40 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
+                            <xs:element name="assessment-method" type="ewp:MultilineStringWithOptionalLang"
+                                        minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Assessment method with optional language code.
+
+                                        You SHOULD use `elm-assessment-type` instead.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="bibliography" type="ewp:MultilineStringWithOptionalLang"
+                                        minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Bibliography with optional language code.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="course-availability" type="ewp:MultilineStringWithOptionalLang"
+                                        minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Course availability with optional language code.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="course-content" type="ewp:MultilineStringWithOptionalLang"
+                                        minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Course content with optional language code.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
                             <xs:element ref="ewp:language-of-instruction" maxOccurs="unbounded"/>
                             <xs:element ref="ewp:last-modified"/>
                             <xs:element ref="ewp:description" minOccurs="0" maxOccurs="unbounded"/>
