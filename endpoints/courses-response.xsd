@@ -87,6 +87,8 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
+                            <xs:element ref="ewp:language-of-instruction" maxOccurs="unbounded"/>
+                            <xs:element ref="ewp:last-modified"/>
                             <xs:element name="assessment-method" type="ewp:MultilineStringWithOptionalLang"
                                         minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
@@ -121,8 +123,6 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element ref="ewp:language-of-instruction" maxOccurs="unbounded"/>
-                            <xs:element ref="ewp:last-modified"/>
                             <xs:element ref="ewp:description" minOccurs="0" maxOccurs="unbounded"/>
                             <xs:element ref="ewp:learning-outcomes" minOccurs="0" maxOccurs="unbounded"/>
                             <xs:element name="term-id" type="trm:TermId" minOccurs="0" maxOccurs="unbounded">
