@@ -1,6 +1,7 @@
 <instances-response
     xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/stable-v1"
     xmlns:trm="https://github.com/erasmus-without-paper/ewp-specs-types-academic-term/tree/stable-v2"
+    xmlns:ewp="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
         https://github.com/erasmus-without-paper/ewp-specs-api-courses/tree/stable-v1
@@ -22,9 +23,9 @@
             <trm:start-date>2025-02-01</trm:start-date>
             <trm:end-date>2025-06-30</trm:end-date>
         </trm:academic-term>
-        <ects>7.5</ects>
-        <language-of-instruction>en</language-of-instruction>
-        <last-modified>2025-09-01T12:00:00Z</last-modified>
+        <ewp:ects>7.5</ewp:ects>
+        <ewp:language-of-instruction>en</ewp:language-of-instruction>
+        <ewp:last-modified>2025-09-01T12:00:00Z</ewp:last-modified>
         <elm-assessment-type>3484bd7e51</elm-assessment-type>
         <elm-assessment-type>6e6cb2cc78</elm-assessment-type>
         <elm-learning-activity-type>ff436ea7c9</elm-learning-activity-type>

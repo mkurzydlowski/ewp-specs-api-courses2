@@ -87,9 +87,16 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element ref="ects"/>
-                            <xs:element ref="language-of-instruction" maxOccurs="unbounded"/>
-                            <xs:element ref="last-modified"/>
+                            <xs:element ref="ewp:ects">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Number of ECTS credits which the student should achieve by completing
+                                        this course instance.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element ref="ewp:language-of-instruction" maxOccurs="unbounded"/>
+                            <xs:element ref="ewp:last-modified"/>
                             <xs:element ref="elm-assessment-type" minOccurs="0" maxOccurs="unbounded"/>
                             <xs:element ref="elm-learning-activity-type" minOccurs="0" maxOccurs="unbounded"/>
                             <xs:element ref="elm-learning-opportunity-type" minOccurs="0" maxOccurs="unbounded"/>
