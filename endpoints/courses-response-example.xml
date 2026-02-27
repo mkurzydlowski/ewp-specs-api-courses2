@@ -35,6 +35,6 @@
             <classification-system>erasmus</classification-system>
             <classification-value>00.0</classification-value>
         </local-classification>
-        <url>https://example.com/</url>
+        <ewp:url>https://example.com/</ewp:url>
     </course>
 </courses-response>
