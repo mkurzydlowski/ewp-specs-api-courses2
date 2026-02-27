@@ -99,6 +99,16 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
+                            <xs:element name="teaching-method" type="ewp:MultilineStringWithOptionalLang"
+                                        minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Teaching method with optional language code.
+
+                                        You SHOULD use `elm-learning-activity-type` instead.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
                             <xs:element name="bibliography" type="ewp:MultilineStringWithOptionalLang"
                                         minOccurs="0" maxOccurs="unbounded">
                                 <xs:annotation>
